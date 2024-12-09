@@ -5,7 +5,7 @@ This year, as last year, I will try to get all my solutions to run in under *one
 | Day | Part 1 | Part 2 |
 |------------------|-----------------|-----------------|
 | 1    | 3 ms    | 4 ms    |
-| 2    | 8 ms    | 12 ms    |
+| 2    | 8 ms    | 9 ms    |
 | 3    | - ms    | - ms    |
 | 4    | - ms    | - ms    |
 | 5    | - ms    | - ms    |

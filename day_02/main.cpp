@@ -69,20 +69,23 @@ bool is_report_safe(vector<int> &report)
     return true;
 }
 
+inline bool call_safe(vector<int> &error_report, int error_index)
+{
+    auto remove_first = error_report;
+    remove_first.erase(next(remove_first.begin(), error_index - 1));
+    auto remove_second = error_report;
+    remove_second.erase(next(remove_second.begin(), error_index));
+
+    return is_report_safe(remove_first) || is_report_safe(remove_second);
+}
+
 bool is_report_safe_with_tolerance(vector<int> &report)
 {
     int dir_count {};
     for (int i = 0; i < 3; ++i)
     {
         if (report.at(i) == report.at(i + 1))
-        {
-            auto remove_first = report;
-            remove_first.erase(next(remove_first.begin(), i - 1));
-            auto remove_second = report;
-            remove_second.erase(next(remove_second.begin(), i));
-
-            return is_report_safe(remove_first) || is_report_safe(remove_second);
-        }
+            return call_safe(report, i);
         else if (report.at(i) < report.at(i + 1))
             ++dir_count; //asc
         else
@@ -98,38 +101,17 @@ bool is_report_safe_with_tolerance(vector<int> &report)
         int diff = report.at(i) - report.at(i - 1);
 
         if (abs(diff) < 1 || abs(diff) > 3)
-        {
-            auto remove_first = report;
-            remove_first.erase(next(remove_first.begin(), i - 1));
-            auto remove_second = report;
-            remove_second.erase(next(remove_second.begin(), i));
-
-            return is_report_safe(remove_first) || is_report_safe(remove_second);
-        }
+            return call_safe(report, i);
 
         if (asc)
         {
             if (diff < 0)
-            {
-                auto remove_first = report;
-                remove_first.erase(next(remove_first.begin(), i - 1));
-                auto remove_second = report;
-                remove_second.erase(next(remove_second.begin(), i));
-
-                return is_report_safe(remove_first) || is_report_safe(remove_second);
-            }
+                return call_safe(report, i);
         }
         else
         {
             if (diff > 0)
-            {
-                auto remove_first = report;
-                remove_first.erase(next(remove_first.begin(), i - 1));
-                auto remove_second = report;
-                remove_second.erase(next(remove_second.begin(), i));
-
-                return is_report_safe(remove_first) || is_report_safe(remove_second);
-            }
+                return call_safe(report, i);
         }
     }
 
