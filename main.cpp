@@ -5,6 +5,8 @@ using namespace std;
 
 #define DEBUG 1
 
+#define PART_1 true
+
 int main()
 {
     auto start_time = chrono::high_resolution_clock::now();
@@ -28,8 +30,16 @@ int main()
     file.close();
     
     // Part 1
-    
+    if (PART_1)
+    {
+
+    }
+
     // Part 2
+    if (!PART_1)
+    {
+        
+    }
     
     auto end_time = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(end_time - start_time);
