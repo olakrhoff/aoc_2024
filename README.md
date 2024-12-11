@@ -6,7 +6,7 @@ This year, as last year, I will try to get all my solutions to run in under *one
 |------------------|-----------------|-----------------|-----------------|
 | 1    | 3 ms    | 4 ms    | -O0 |
 | 2    | 8 ms    | 9 ms    | -O0 |
-| 3    | - ms    | - ms    | -O0 |
+| 3    | 35 ms    | 67 ms  | -O0 |
 | 4    | - ms    | - ms    | -O0 |
 | 5    | - ms    | - ms    | -O0 |
 | 6    | - ms    | - ms    | -O0 |
