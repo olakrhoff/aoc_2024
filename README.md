@@ -9,7 +9,7 @@ This year, as last year, I will try to get all my solutions to run in under *one
 | 3    | 35 ms    | 67 ms  | -O0 |
 | 4    | 7 ms    | 2 ms    | -O0 |
 | 5    | 23 ms    | 267 ms    | -O0 |
-| 6    | - ms    | - ms    | -O0 |
+| 6    | 7 ms    | 766 ms    | -O0/-O1 |
 | 7    | - ms    | - ms    | -O0 |
 | 8    | - ms    | - ms    | -O0 |
 | 9    | - ms    | - ms    | -O0 |
